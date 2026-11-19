@@ -6,12 +6,12 @@ A two-player card duel of tricks, magic and bluffing, featuring Caribbean monste
 
 ## Download the free demo
 
-**Working Build 6.3** · released 19 Nov 2026 · expires 1 Jan 2027
+**Working Build 6.4** · released 19 Nov 2026 · expires 1 Jan 2027
 
 | Platform | Download | Size |
 |---|---|---|
-| Windows 10 or later | [TheJumbieGambit-wb6.3-Windows.zip](https://github.com/nickseegobin/jumbie-gambit/releases/download/wb6.3/TheJumbieGambit-wb6.3-Windows.zip) | 105 MB |
-| macOS | [TheJumbieGambit-wb6.3-Mac.zip](https://github.com/nickseegobin/jumbie-gambit/releases/download/wb6.3/TheJumbieGambit-wb6.3-Mac.zip) | 113 MB |
+| Windows 10 or later | [TheJumbieGambit-wb6.4-Windows.zip](https://github.com/nickseegobin/jumbie-gambit/releases/download/wb6.4/TheJumbieGambit-wb6.4-Windows.zip) | 105 MB |
+| macOS | [TheJumbieGambit-wb6.4-Mac.zip](https://github.com/nickseegobin/jumbie-gambit/releases/download/wb6.4/TheJumbieGambit-wb6.4-Mac.zip) | 113 MB |
 
 Download page with install help: **https://nickseegobin.github.io/jumbie-gambit/**
 
