@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Download The Jumbie Gambit: Working Build 6.1</title>
+<meta name="description" content="Download the free demo of The Jumbie Gambit: Spirits of Lore, Mystery &amp; Bacchanal. Working Build 6.1 for Windows and Mac.">
+<meta name="theme-color" content="#140620">
+<link rel="canonical" href="https://nickseegobin.github.io/jumbie-gambit/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nickseegobin.github.io/jumbie-gambit/">
+<meta property="og:site_name" content="The Jumbie Gambit">
+<meta property="og:title" content="Download The Jumbie Gambit: free demo, Working Build 6.1">
+<meta property="og:description" content="A two-player card duel of tricks, magic and bluffing, featuring Caribbean monsters. Free for Windows and Mac.">
+<meta property="og:image" content="https://nickseegobin.github.io/jumbie-gambit/assets/img/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://nickseegobin.github.io/jumbie-gambit/assets/img/share.jpg">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="assets/img/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/img/favicon-180.png">
+<link rel="preload" href="assets/fonts/Anton-Regular.ttf" as="font" type="font/ttf" crossorigin>
+<style>
+@font-face{font-family:"Anton";src:url(assets/fonts/Anton-Regular.ttf) format("truetype");font-display:swap}
+@font-face{font-family:"Roboto Condensed";font-weight:400;src:url(assets/fonts/Roboto_Condensed-Regular.ttf) format("truetype");font-display:swap}
+@font-face{font-family:"Roboto Condensed";font-weight:700;src:url(assets/fonts/Roboto_Condensed-Bold.ttf) format("truetype");font-display:swap}
+:root{
+  --ink:#120619; --plum:#170722; --night:#1D1030; --panel:#251838; --line:#3A2A52;
+  --mist:#BDB2CF; --cream:#F5EFE3; --gold:#F2C230; --red:#E8262B; --red-dark:#A3151A; --teal:#3FD9B8; --discord:#5865F2;
+  --wrap:1120px; --gutter:clamp(16px,4vw,40px); --header:64px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;color-scheme:dark;scroll-padding-top:calc(var(--header) + 12px)}
+body{margin:0;background:var(--ink);color:var(--cream);font:400 18px/1.6 "Roboto Condensed",system-ui,sans-serif;overflow-x:clip}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:"Anton",Impact,sans-serif;font-weight:400;line-height:1.08;margin:0;text-transform:uppercase;letter-spacing:.01em;text-wrap:balance}
+p{margin:0}
+code{font:600 13px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--mist);word-break:break-all}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+.eyebrow{font:700 13px/1.2 "Roboto Condensed";letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.woven{height:12px;max-width:180px;margin:18px 0 0;background:url(assets/img/divider_woven.svg) repeat-x center/auto 12px;opacity:.4}
+.dc{width:18px;height:18px;flex:none}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 26px;border-radius:999px;
+  font:400 17px/1 "Anton";letter-spacing:.08em;text-transform:uppercase;text-decoration:none;text-align:center;
+  background:var(--red);color:var(--cream);border:2px solid var(--gold);transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-2px);background:#F23A3F}
+.btn.ghost{background:rgba(245,239,227,.06);border-color:rgba(245,239,227,.45)}
+.btn.ghost:hover{background:rgba(245,239,227,.12);border-color:var(--gold);color:var(--gold)}
+.btn.discord{background:var(--discord);border-color:#C9CEFF}
+.btn.discord:hover{background:#6B77F5}
+.btn.sm{min-height:38px;padding:0 18px;font-size:14px}
+
+/* Header */
+.top{position:sticky;top:0;z-index:20;height:var(--header);background:rgba(18,6,25,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(245,239,227,.08)}
+.top .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1280px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:400 19px/1 "Anton";letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.brand img{width:34px;height:34px;border-radius:8px}
+.top nav{display:flex;align-items:center;gap:22px}
+.top nav a.nl{display:inline-flex;align-items:center;gap:7px;font:700 14px/1 "Roboto Condensed";letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--mist)}
+.top nav a.nl:hover{color:var(--gold)}
+
+/* Hero */
+.hero{position:relative;max-width:1920px;margin:0 auto}
+.hero picture img{width:100%;aspect-ratio:16/9;max-height:62vh;object-fit:cover;object-position:50% 0}
+.hero::after{content:"";position:absolute;inset:auto 0 0;height:45%;background:linear-gradient(0deg,var(--ink),transparent);pointer-events:none}
+
+/* Download card */
+.dl{position:relative;z-index:2;margin-top:-120px}
+.dl-card{background:linear-gradient(180deg,rgba(37,24,56,.96),rgba(29,16,48,.98));border:1px solid rgba(242,194,48,.35);border-radius:20px;padding:clamp(22px,3.4vw,40px);box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.dl-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 24px;margin-bottom:24px}
+.dl-head h1{font-size:clamp(32px,4.4vw,52px)}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;background:rgba(63,217,184,.12);border:1px solid rgba(63,217,184,.5);color:#BFF3E6;font:700 14px/1 "Roboto Condensed";letter-spacing:.06em;white-space:nowrap}
+.badge i{width:8px;height:8px;border-radius:50%;background:var(--teal)}
+.platforms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.platform{position:relative;display:flex;align-items:center;gap:18px;padding:22px 24px;border-radius:14px;text-decoration:none;background:rgba(18,6,25,.55);border:1px solid var(--line);transition:border-color .15s,background .15s,transform .15s}
+.platform:hover{border-color:var(--gold);background:rgba(46,31,69,.9);transform:translateY(-2px)}
+.platform .os{width:50px;height:50px;flex:none;border-radius:12px;display:grid;place-items:center;background:rgba(245,239,227,.07)}
+.platform .os svg{width:28px;height:28px;fill:var(--cream)}
+.platform b{display:block;font:400 24px/1.1 "Anton";letter-spacing:.04em;text-transform:uppercase}
+.platform small{display:block;margin-top:4px;font-size:15px;color:var(--mist)}
+.platform .arrow{margin-left:auto;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--red);border:2px solid var(--gold);flex:none}
+.platform .arrow svg{width:20px;height:20px;stroke:var(--cream);fill:none;stroke-width:2.4}
+.platform .rec{position:absolute;top:-11px;left:20px;padding:3px 10px;border-radius:999px;background:var(--teal);color:#06231D;font:700 11px/1.4 "Roboto Condensed";letter-spacing:.12em;text-transform:uppercase;display:none}
+.platform.is-rec{border-color:rgba(63,217,184,.75)}
+.platform.is-rec .rec{display:block}
+.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;margin-top:24px;border-radius:12px;overflow:hidden;background:var(--line);border:1px solid var(--line)}
+.meta div{background:rgba(18,6,25,.7);padding:14px 16px}
+.meta dt{font:700 12px/1.2 "Roboto Condensed";letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.meta dd{margin:0;font-size:17px}
+.dl-foot{display:flex;flex-wrap:wrap;gap:8px 26px;margin-top:18px;font-size:15px;color:var(--mist)}
+.dl-foot a{color:var(--gold);text-underline-offset:3px}
+
+/* Sections */
+section{padding:clamp(56px,7vw,92px) 0}
+.sec-head{margin-bottom:clamp(26px,3.4vw,40px)}
+.sec-head h2{font-size:clamp(30px,3.8vw,46px)}
+.sec-head p{margin-top:12px;color:var(--mist);max-width:680px}
+.alt{background:linear-gradient(180deg,var(--plum),var(--night))}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px}
+.card h3{font-size:24px;display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.card h3 svg{width:24px;height:24px;fill:var(--cream)}
+.card ol{margin:0;padding-left:22px;display:grid;gap:10px;color:#DCD3EA}
+.card ol li::marker{color:var(--gold);font-weight:700}
+.tip{margin-top:16px;padding:12px 14px;border-radius:10px;background:rgba(242,194,48,.08);border:1px solid rgba(242,194,48,.3);font-size:15px;color:#E9E0C8}
+.tip b{color:var(--gold)}
+
+.notes{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.notes li{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start}
+.tag{font:700 11px/1 "Roboto Condensed";letter-spacing:.12em;text-transform:uppercase;padding:6px 9px;border-radius:6px;background:rgba(63,217,184,.14);color:var(--teal);margin-top:3px}
+.tag.fix{background:rgba(232,38,43,.16);color:#FF8A8D}
+
+/* About */
+.about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,4vw,56px);align-items:center}
+.lede{font-size:clamp(19px,1.8vw,22px);color:#DCD3EA}
+.tagline{font:400 clamp(28px,3vw,40px)/1.06 "Anton";text-transform:uppercase;margin-bottom:18px}
+.tagline span{display:block}.tagline .g{color:var(--gold)}
+.features{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:clamp(32px,4vw,48px)}
+.feature{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.feature figure{margin:0;aspect-ratio:16/10;overflow:hidden;background:#0B0412}
+.feature figure img{width:100%;height:100%;object-fit:cover}
+.feature .body{display:flex;gap:14px;padding:18px 20px 22px}
+.feature .suit{width:24px;height:24px;flex:none;margin-top:4px}
+.feature h3{font-size:23px;margin-bottom:4px}
+.feature p{color:var(--mist);font-size:17px}
+.shot{border-radius:14px;overflow:hidden;border:1px solid rgba(242,194,48,.45);box-shadow:0 24px 60px rgba(0,0,0,.5)}
+
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:18px}
+.steps li{display:grid;grid-template-columns:40px 1fr;gap:14px}
+.num{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font:400 20px/1 "Anton";color:var(--gold);border:2px solid rgba(242,194,48,.6);background:rgba(242,194,48,.08)}
+.steps h3{font-size:21px;margin:6px 0 4px}
+.steps p{color:var(--mist);font-size:17px}
+.steps strong{color:var(--cream)}
+
+/* Community */
+.community{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:36px;align-items:center}
+.community p{font-size:20px;color:#DCD3EA;max-width:480px;margin-bottom:26px}
+.community img{max-width:340px;margin:0 auto;filter:drop-shadow(0 24px 40px rgba(0,0,0,.55))}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+
+footer{border-top:1px solid rgba(245,239,227,.08);padding:34px 0 40px;text-align:center;color:var(--mist);font-size:14px}
+footer img{width:160px;margin:0 auto 12px}
+footer a{color:var(--gold)}
+footer nav{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 22px;margin-top:10px}
+
+@media (max-width:900px){
+  .top nav .hide-m{display:none!important}
+  .meta{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .about,.community{grid-template-columns:1fr}
+  .community img{order:-1;max-width:240px}
+}
+@media (max-width:640px){
+  :root{--header:58px}
+  body{font-size:17px}
+  .brand{font-size:16px}.brand img{width:30px;height:30px}
+  .top nav{gap:14px}
+  .hero picture img{aspect-ratio:9/16;max-height:none}
+  .hero::after{height:30%}
+  .dl{margin-top:-38vw}
+  .platforms,.grid2,.features{grid-template-columns:1fr}
+  .platform{padding:20px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<!--
+  ============================================================
+  RELEASE: when you publish a new build, update these values
+  (and the "What's new" list below). Files are served from
+  GitHub Releases: /releases/download/<tag>/<file>
+  ============================================================
+-->
+<script>
+  window.JUMBIE = {
+    repo:     "nickseegobin/jumbie-gambit",
+    tag:      "wb6.1",
+    windows:  "TheJumbieGambit-wb6.1-Windows.zip",
+    mac:      "TheJumbieGambit-wb6.1-Mac.zip",
+    discord:  "https://discord.gg/95H6acF4yM",
+    site:     "https://efoundry.co/games/jumbie-gambit/"
+  };
+</script>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="assets/img/favicon-192.png" width="192" height="192" alt="">The Jumbie Gambit</a>
+    <nav aria-label="Page">
+      <a class="nl hide-m" href="#install">Install</a>
+      <a class="nl hide-m" href="#about">The game</a>
+      <a class="nl" data-href="discord" href="https://discord.gg/95H6acF4yM"><svg class="dc" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.3 4.4A19.6 19.6 0 0 0 15.4 3l-.6 1.3a18 18 0 0 0-5.6 0L8.6 3a19.5 19.5 0 0 0-4.9 1.5C.6 9.1-.3 13.7.2 18.2a19.7 19.7 0 0 0 6 3l1.3-2.1a12.7 12.7 0 0 1-2-1l.5-.4a14 14 0 0 0 12 0l.5.4c-.6.4-1.3.7-2 1l1.3 2.1a19.6 19.6 0 0 0 6-3c.5-5.2-.9-9.7-3.5-13.8zM8.1 15.4c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.1 1.1 2.1 2.4-.9 2.4-2.1 2.4zm7.8 0c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.1 1.1 2.1 2.4-.9 2.4-2.1 2.4z"/></svg><span class="hide-m">Discord</span></a>
+      <a class="btn sm" href="#download">Download</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <picture>
+      <source media="(max-width:640px)" srcset="assets/img/splash-mobile-720.webp 720w, assets/img/splash-mobile.webp 1080w" sizes="100vw">
+      <img src="assets/img/splash-desktop.webp" srcset="assets/img/splash-desktop-1280.webp 1280w, assets/img/splash-desktop.webp 1920w" sizes="100vw" width="1920" height="1080" fetchpriority="high"
+           alt="The Jumbie Gambit logo beside Papa Bois, La Diablesse, Anansi, the Soucouyant and the rest of the Caribbean spirits">
+    </picture>
+  </div>
+
+  <section id="download" class="dl" aria-labelledby="dl-title" style="padding-top:0">
+    <div class="wrap">
+      <div class="dl-card">
+        <div class="dl-head">
+          <div>
+            <p class="eyebrow">Free demo · Friends &amp; family playtest</p>
+            <h1 id="dl-title">Download The Jumbie Gambit</h1>
+          </div>
+          <span class="badge"><i aria-hidden="true"></i>Working Build 6.1</span>
+        </div>
+        <div class="platforms">
+          <a class="platform" data-file="windows" data-os="win" href="https://github.com/nickseegobin/jumbie-gambit/releases/download/wb6.1/TheJumbieGambit-wb6.1-Windows.zip">
+            <span class="rec">Your system</span>
+            <span class="os"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5 10.5 4.5v7H3zM11.5 4.4 21 3v8.5h-9.5zM3 12.5h7.5v7L3 18.5zM11.5 12.5H21V21l-9.5-1.4z"/></svg></span>
+            <span><b>Windows</b><small>ZIP · 104 MB · Windows 10 or later</small></span>
+            <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v12m0 0-5-5m5 5 5-5"/></svg></span>
+          </a>
+          <a class="platform" data-file="mac" data-os="mac" href="https://github.com/nickseegobin/jumbie-gambit/releases/download/wb6.1/TheJumbieGambit-wb6.1-Mac.zip">
+            <span class="rec">Your system</span>
+            <span class="os"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9s-1.8-.8-3-.8C6.9 7.3 5.4 8.2 4.6 9.7c-1.7 2.9-.4 7.2 1.2 9.6.8 1.2 1.7 2.4 2.9 2.4 1.2 0 1.6-.8 3-.8s1.8.8 3 .7c1.3 0 2.1-1.2 2.8-2.4.9-1.3 1.3-2.6 1.3-2.7-.1 0-2.4-.9-2.4-3.9zM14.1 5.5c.6-.8 1.1-1.8 1-2.9-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.8-1 2.8 1 .1 2.1-.5 2.7-1.3z"/></svg></span>
+            <span><b>Mac</b><small>ZIP · 112 MB · macOS</small></span>
+            <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v12m0 0-5-5m5 5 5-5"/></svg></span>
+          </a>
+        </div>
+        <dl class="meta">
+          <div><dt>Build</dt><dd>Working Build 6.1</dd></div>
+          <div><dt>Released</dt><dd>18 Nov 2026</dd></div>
+          <div><dt>Expires</dt><dd>1 Jan 2027</dd></div>
+          <div><dt>Price</dt><dd>Free playtest</dd></div>
+        </dl>
+        <div class="dl-foot">
+          <span>New here? <a href="#install">How to install</a></span>
+          <span><a data-href="releases" href="https://github.com/nickseegobin/jumbie-gambit/releases">All releases &amp; checksums</a></span>
+          <span>Playing with a friend? You both need the same build.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="install" aria-labelledby="install-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Two minutes, tops</p>
+        <h2 id="install-title">How to install</h2>
+        <div class="woven" aria-hidden="true"></div>
+      </div>
+      <div class="grid2">
+        <div class="card">
+          <h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5 10.5 4.5v7H3zM11.5 4.4 21 3v8.5h-9.5zM3 12.5h7.5v7L3 18.5zM11.5 12.5H21V21l-9.5-1.4z"/></svg>Windows</h3>
+          <ol>
+            <li>Download the Windows ZIP.</li>
+            <li>Right-click it and choose <strong>Extract All</strong>.</li>
+            <li>Open the extracted folder and double-click <strong>TheJumbieGambit.exe</strong>.</li>
+          </ol>
+          <p class="tip"><b>Blue “Windows protected your PC” box?</b> Click <strong>More info</strong>, then <strong>Run anyway</strong>. It appears because this is an early test build.</p>
+        </div>
+        <div class="card">
+          <h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9s-1.8-.8-3-.8C6.9 7.3 5.4 8.2 4.6 9.7c-1.7 2.9-.4 7.2 1.2 9.6.8 1.2 1.7 2.4 2.9 2.4 1.2 0 1.6-.8 3-.8s1.8.8 3 .7c1.3 0 2.1-1.2 2.8-2.4.9-1.3 1.3-2.6 1.3-2.7-.1 0-2.4-.9-2.4-3.9zM14.1 5.5c.6-.8 1.1-1.8 1-2.9-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.8-1 2.8 1 .1 2.1-.5 2.7-1.3z"/></svg>Mac</h3>
+          <ol>
+            <li>Download the Mac ZIP. Your Mac unzips it into <strong>The Jumbie Gambit.app</strong>.</li>
+            <li>Drag the app into your <strong>Applications</strong> folder.</li>
+            <li>Control-click the app, choose <strong>Open</strong>, then <strong>Open</strong> again.</li>
+          </ol>
+          <p class="tip"><b>Mac says it can’t open the app?</b> Go to <strong>System Settings › Privacy &amp; Security</strong>, scroll down and click <strong>Open Anyway</strong>. You only need to do this once.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="whats-new" class="alt" aria-labelledby="new-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Release notes</p>
+        <h2 id="new-title">What’s new in Working Build 6.1</h2>
+        <div class="woven" aria-hidden="true"></div>
+      </div>
+      <div class="card">
+        <ul class="notes">
+          <li><span class="tag fix">Fix</span><span>On Mac, the Sacred card now flies to the shield at the start of every hand. In 6.0 a camera-shake error stopped the reveal, so the Sacred suit looked like it was never called.</span></li>
+          <li><span class="tag fix">Fix</span><span>No more stray spark left sitting on the Follow slot after the Sacred reveal.</span></li>
+          <li><span class="tag">New</span><span>The game is now called <strong>The Jumbie Gambit</strong>, with the new clay title and splash art.</span></li>
+          <li><span class="tag">New</span><span>Join the Discord to share feedback, report bugs and find someone to duel.</span></li>
+        </ul>
+        <p class="tip" style="margin-top:20px"><b>Time-limited build.</b> This playtest build stops working on 1 Jan 2027. A newer build will be posted here before then.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" aria-labelledby="about-title">
+    <div class="wrap">
+      <div class="about">
+        <div>
+          <p class="eyebrow">The Jumbie Gambit: Spirits of Lore, Mystery &amp; Bacchanal</p>
+          <h2 id="about-title" class="tagline"><span>Play your cards.</span><span>Hide your intentions.</span><span class="g">Bring the bacchanal.</span></h2>
+          <p class="lede">A two-player card duel of tricks, magic and bluffing, featuring Caribbean monsters. Command the Sacred suit, sacrifice cards for powerful effects, and outwit your rival to bring their life to zero.</p>
+        </div>
+        <div class="shot"><img width="1364" height="900" src="assets/img/shot-table.webp" loading="lazy" alt="The game table: life bars at 14 LP each, the Sacred shield set to Clubs, the trick ring and your six-card hand"></div>
+      </div>
+      <div class="features">
+        <article class="feature">
+          <figure><img width="855" height="430" src="assets/img/shot-hidden-card.webp" loading="lazy" alt="A trick of four cards on the ritual table, with the third card played face down"></figure>
+          <div class="body"><img class="suit" width="64" height="64" src="assets/img/suit_spades.svg" alt=""><div><h3>Keep them guessing.</h3><p>A hidden card turns every trick into a battle of nerve.</p></div></div>
+        </article>
+        <article class="feature">
+          <figure><img width="1024" height="675" src="assets/img/shot-sacrifice.webp" loading="lazy" alt="The Sacrifice panel offering a free Refresh 2 from the Queen of Diamonds"></figure>
+          <div class="body"><img class="suit" width="64" height="64" src="assets/img/suit_hearts.svg" alt=""><div><h3>Change your fortunes.</h3><p>Sacrifice cards to refresh your hand, reveal a bluff or change the Sacred suit.</p></div></div>
+        </article>
+        <article class="feature">
+          <figure><img width="1200" height="675" src="assets/img/shot-story-map.webp" loading="lazy" alt="The Chapter 1 map, The Restless Zemí, with three destinations"></figure>
+          <div class="body"><img class="suit" width="64" height="64" src="assets/img/suit_clubs.svg" alt=""><div><h3>Explore the story.</h3><p>Follow Ana through Chapter 1: The Restless Zemi and challenge three guardians.</p></div></div>
+        </article>
+        <article class="feature">
+          <figure><img width="644" height="404" src="assets/img/shot-rival.webp" loading="lazy" alt="Quick Match opponent choice: Easy, Normal or Hard"></figure>
+          <div class="body"><img class="suit" width="64" height="64" src="assets/img/suit_diamonds.svg" alt=""><div><h3>Choose your rival.</h3><p>Face three computer difficulty levels or duel a friend on the same Wi-Fi network.</p></div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="first-duel" class="alt" aria-labelledby="duel-title">
+    <div class="wrap">
+      <div class="grid2" style="align-items:start">
+        <div>
+          <div class="sec-head">
+            <h2 id="duel-title">Your first duel starts here</h2>
+            <div class="woven" aria-hidden="true"></div>
+          </div>
+          <ol class="steps">
+            <li><span class="num" aria-hidden="true">1</span><div><h3>Learn the basics.</h3><p>Open <strong>Tutorial</strong> for six illustrated lessons, then select <strong>PLAY NOW</strong> to face the Easy computer.</p></div></li>
+            <li><span class="num" aria-hidden="true">2</span><div><h3>Play the Sacred suit.</h3><p>Each hand gives you six cards. Sacred cards beat every other suit.</p></div></li>
+            <li><span class="num" aria-hidden="true">3</span><div><h3>Outwit and survive.</h3><p>Win tricks, use sacrifices and collect scoring prizes to damage your rival. Both players start with 14 Life Points.</p></div></li>
+          </ol>
+        </div>
+        <div class="card">
+          <img width="600" height="500" src="assets/img/shot-online.webp" loading="lazy" alt="The Hosting panel showing a game code to share with a friend" style="border-radius:10px;margin-bottom:18px">
+          <h3>Bring a friend</h3>
+          <p>Choose <strong>Online Match → Host Game</strong>, then share the game code. Your friend selects <strong>Join Game</strong> and enters it.</p>
+          <p class="tip">Both players need the same game version and must be connected to the same network. Internet matchmaking is planned.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="community" aria-labelledby="community-title">
+    <div class="wrap community">
+      <div>
+        <div class="sec-head">
+          <h2 id="community-title">Help us make more bacchanal</h2>
+          <div class="woven" aria-hidden="true"></div>
+        </div>
+        <p>Something confusing? A brilliant moment? A monster of a bug? Tell us what happened.</p>
+        <div class="cta-row">
+          <a class="btn discord" data-href="discord" href="https://discord.gg/95H6acF4yM"><svg class="dc" viewBox="0 0 24 24" aria-hidden="true" style="width:22px;height:22px"><path fill="currentColor" d="M20.3 4.4A19.6 19.6 0 0 0 15.4 3l-.6 1.3a18 18 0 0 0-5.6 0L8.6 3a19.5 19.5 0 0 0-4.9 1.5C.6 9.1-.3 13.7.2 18.2a19.7 19.7 0 0 0 6 3l1.3-2.1a12.7 12.7 0 0 1-2-1l.5-.4a14 14 0 0 0 12 0l.5.4c-.6.4-1.3.7-2 1l1.3 2.1a19.6 19.6 0 0 0 6-3c.5-5.2-.9-9.7-3.5-13.8zM8.1 15.4c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.1 1.1 2.1 2.4-.9 2.4-2.1 2.4zm7.8 0c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.1 1.1 2.1 2.4-.9 2.4-2.1 2.4z"/></svg>Share feedback on Discord</a>
+          <a class="btn ghost" href="#download">Get the demo</a>
+        </div>
+      </div>
+      <img width="788" height="820" src="assets/img/papa-bois-clay.webp" loading="lazy" alt="Papa Bois, guardian of the forest, with his staff and a green spirit flame">
+    </div>
+  </section>
+</main>
+
+<footer>
+  <img src="assets/img/logo-clay.webp" width="640" height="360" loading="lazy" alt="The Jumbie Gambit">
+  <p>The Jumbie Gambit: Spirits of Lore, Mystery &amp; Bacchanal · Developed by Nick Seegobin and eFoundry Digital</p>
+  <nav aria-label="Footer">
+    <a data-href="site" href="https://efoundry.co/games/jumbie-gambit/">Official site</a>
+    <a data-href="discord" href="https://discord.gg/95H6acF4yM">Discord</a>
+    <a data-href="releases" href="https://github.com/nickseegobin/jumbie-gambit/releases">All releases</a>
+  </nav>
+</footer>
+
+<script>
+  (function(){
+    var J = window.JUMBIE || {}, base = "https://github.com/" + J.repo;
+    var dl = function(f){ return base + "/releases/download/" + J.tag + "/" + f; };
+    document.querySelectorAll("[data-file]").forEach(function(a){ var f = J[a.getAttribute("data-file")]; if (f) a.href = dl(f); });
+    document.querySelectorAll('[data-href="discord"]').forEach(function(a){ if (J.discord) { a.href = J.discord; } });
+    document.querySelectorAll('[data-href="site"]').forEach(function(a){ if (J.site) a.href = J.site; });
+    document.querySelectorAll('[data-href="releases"]').forEach(function(a){ a.href = base + "/releases"; });
+    document.querySelectorAll('a[href^="http"]').forEach(function(a){ if (!a.hasAttribute("data-file")) { a.target = "_blank"; a.rel = "noopener"; } });
+    var ua = navigator.userAgent || "";
+    var os = /Mac OS X|Macintosh/.test(ua) && !/iPhone|iPad/.test(ua) ? "mac" : (/Windows/.test(ua) ? "win" : "");
+    if (os) { var p = document.querySelector('.platform[data-os="'+os+'"]'); if (p) p.classList.add("is-rec"); }
+  })();
+</script>
+</body>
+</html>
