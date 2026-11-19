@@ -218,25 +218,25 @@ footer nav{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 22px;margi
             <p class="eyebrow">Free demo · Friends &amp; family playtest</p>
             <h1 id="dl-title">Download The Jumbie Gambit</h1>
           </div>
-          <span class="badge"><i aria-hidden="true"></i>Working Build 6.2</span>
+          <span class="badge"><i aria-hidden="true"></i><span data-latest="name">Working Build 6.2</span></span>
         </div>
         <div class="platforms">
           <a class="platform" data-file="windows" data-os="win" href="https://github.com/nickseegobin/jumbie-gambit/releases/download/wb6.2/TheJumbieGambit-wb6.2-Windows.zip">
             <span class="rec">Your system</span>
             <span class="os"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5 10.5 4.5v7H3zM11.5 4.4 21 3v8.5h-9.5zM3 12.5h7.5v7L3 18.5zM11.5 12.5H21V21l-9.5-1.4z"/></svg></span>
-            <span><b>Windows</b><small>ZIP · 104 MB · Windows 10 or later</small></span>
+            <span><b>Windows</b><small>ZIP · <span data-size="windows">104 MB</span> · Windows 10 or later</small></span>
             <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v12m0 0-5-5m5 5 5-5"/></svg></span>
           </a>
           <a class="platform" data-file="mac" data-os="mac" href="https://github.com/nickseegobin/jumbie-gambit/releases/download/wb6.2/TheJumbieGambit-wb6.2-Mac.zip">
             <span class="rec">Your system</span>
             <span class="os"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9s-1.8-.8-3-.8C6.9 7.3 5.4 8.2 4.6 9.7c-1.7 2.9-.4 7.2 1.2 9.6.8 1.2 1.7 2.4 2.9 2.4 1.2 0 1.6-.8 3-.8s1.8.8 3 .7c1.3 0 2.1-1.2 2.8-2.4.9-1.3 1.3-2.6 1.3-2.7-.1 0-2.4-.9-2.4-3.9zM14.1 5.5c.6-.8 1.1-1.8 1-2.9-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.8-1 2.8 1 .1 2.1-.5 2.7-1.3z"/></svg></span>
-            <span><b>Mac</b><small>ZIP · 112 MB · macOS</small></span>
+            <span><b>Mac</b><small>ZIP · <span data-size="mac">112 MB</span> · macOS</small></span>
             <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v12m0 0-5-5m5 5 5-5"/></svg></span>
           </a>
         </div>
         <dl class="meta">
-          <div><dt>Build</dt><dd>Working Build 6.2</dd></div>
-          <div><dt>Released</dt><dd>18 Nov 2026</dd></div>
+          <div><dt>Build</dt><dd data-latest="name">Working Build 6.2</dd></div>
+          <div><dt>Released</dt><dd data-latest="date">18 Nov 2026</dd></div>
           <div><dt>Expires</dt><dd>1 Jan 2027</dd></div>
           <div><dt>Price</dt><dd>Free playtest</dd></div>
         </dl>
@@ -377,7 +377,6 @@ footer nav{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 22px;margi
   <img src="assets/img/logo-clay.webp" width="640" height="360" loading="lazy" alt="The Jumbie Gambit">
   <p>The Jumbie Gambit: Spirits of Lore, Mystery &amp; Bacchanal · Developed by Nick Seegobin and eFoundry Digital</p>
   <nav aria-label="Footer">
-    <a data-href="site" href="https://efoundry.co/games/jumbie-gambit/">Official site</a>
     <a data-href="discord" href="https://discord.gg/95H6acF4yM">Discord</a>
     <a data-href="releases" href="https://github.com/nickseegobin/jumbie-gambit/releases">All releases</a>
   </nav>
@@ -389,12 +388,33 @@ footer nav{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 22px;margi
     var dl = function(f){ return base + "/releases/download/" + J.tag + "/" + f; };
     document.querySelectorAll("[data-file]").forEach(function(a){ var f = J[a.getAttribute("data-file")]; if (f) a.href = dl(f); });
     document.querySelectorAll('[data-href="discord"]').forEach(function(a){ if (J.discord) { a.href = J.discord; } });
-    document.querySelectorAll('[data-href="site"]').forEach(function(a){ if (J.site) a.href = J.site; });
     document.querySelectorAll('[data-href="releases"]').forEach(function(a){ a.href = base + "/releases"; });
     document.querySelectorAll('a[href^="http"]').forEach(function(a){ if (!a.hasAttribute("data-file")) { a.target = "_blank"; a.rel = "noopener"; } });
     var ua = navigator.userAgent || "";
     var os = /Mac OS X|Macintosh/.test(ua) && !/iPhone|iPad/.test(ua) ? "mac" : (/Windows/.test(ua) ? "win" : "");
     if (os) { var p = document.querySelector('.platform[data-os="'+os+'"]'); if (p) p.classList.add("is-rec"); }
+  })();
+</script>
+<script>
+  // Always offer the newest GitHub Release: publishing a release updates this page with no edits.
+  (function(){
+    var J = window.JUMBIE || {};
+    if (!window.fetch) return;
+    fetch("https://api.github.com/repos/" + J.repo + "/releases/latest", {headers:{"Accept":"application/vnd.github+json"}})
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(rel){
+        if (!rel || !rel.assets) return;
+        var pick = function(re){ for (var i=0;i<rel.assets.length;i++){ if (re.test(rel.assets[i].name)) return rel.assets[i]; } return null; };
+        var found = { windows: pick(/windows.*\.zip$/i), mac: pick(/mac.*\.zip$/i) };
+        Object.keys(found).forEach(function(k){
+          var a = found[k]; if (!a) return;
+          var link = document.querySelector('[data-file="'+k+'"]'); if (link) link.href = a.browser_download_url;
+          var size = document.querySelector('[data-size="'+k+'"]'); if (size) size.textContent = Math.round(a.size/1048576) + " MB";
+        });
+        if (rel.name) document.querySelectorAll('[data-latest="name"]').forEach(function(el){ el.textContent = rel.name; });
+        if (rel.published_at) { var d = new Date(rel.published_at);
+          document.querySelectorAll('[data-latest="date"]').forEach(function(el){ el.textContent = d.toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric"}); }); }
+      }).catch(function(){});
   })();
 </script>
 </body>
